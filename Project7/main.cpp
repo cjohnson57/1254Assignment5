@@ -54,20 +54,20 @@ int main(int argc, char** argv)
 		getline(f, command);
 		if (command.substr(0, 3) == "let")
 		{
-			string letter = command.substr(4, 1);
+			char letter = command[4];
 			string number = command.substr(8);
-			lettervalues[letterToNum(letter[0])] = stoi(number);
+			lettervalues[letterToNum(letter)] = stoi(number);
 		}
 		else if (command.substr(0, 4) == "calc")
 		{
-			string letter = command.substr(5, 1);
+			char letter = command[5];
 			string function = command.substr(9);
-			lettervalues[letterToNum(letter[0])] = calculate(lettervalues, function);
+			lettervalues[letterToNum(letter)] = calculate(lettervalues, function);
 		}
 		else if (command.substr(0, 5) == "print")
 		{
-			string letter = command.substr(6, 1);
-			cout << letter << " = " << lettervalues[letterToNum(letter[0])] << endl;
+			char letter = command[6];
+			cout << letter << " = " << lettervalues[letterToNum(letter)] << endl;
 		}
 		else if (i != 0) //Since the first getline doesn't read anything, the error is ignored for the first loop
 		{
