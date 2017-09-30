@@ -48,6 +48,11 @@ int main(int argc, char** argv)
 
 	int lettervalues[26];
 
+	for (int i = 0; i < 26; i++)
+	{
+		lettervalues[i] = 0;
+	}
+
 	for (int i = 0; i <= lines; i++) //The first getline tries to read the line 10 which has already been retrieved, so there is one extra loop
 	{
 		string command;
